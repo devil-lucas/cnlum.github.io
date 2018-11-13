@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>LoverBoy...</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-11-09T06:54:58.135Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>刘路明</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>吃鸡第一天</title>
+    <link href="http://yoursite.com/2018/11/09/%E5%90%83%E9%B8%A1%E7%AC%AC%E4%B8%80%E5%A4%A9/"/>
+    <id>http://yoursite.com/2018/11/09/吃鸡第一天/</id>
+    <published>2018-11-09T06:48:24.000Z</published>
+    <updated>2018-11-09T06:54:58.135Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;今天的天很蓝，水很清。我拿出了手机，打开了刺激战场，因为大神777说要带我吃鸡。说的77，她真的非常厉害，自己总结出了一套传奇打法——“敌不动我不动，敌要动我还是不动”，这句话看似简单，但是要学到其中的奥妙还是非常的困难，这里总结为两个字——苟住！真好，今天又落地成盒了，肯
+        
+      
+    
+    </summary>
+    
+    
+      <category term="吃鸡" scheme="http://yoursite.com/tags/%E5%90%83%E9%B8%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>你好hexo</title>
+    <link href="http://yoursite.com/2018/11/08/%E4%BD%A0%E5%A5%BDhexo/"/>
+    <id>http://yoursite.com/2018/11/08/你好hexo/</id>
+    <published>2018-11-08T13:20:27.000Z</published>
+    <updated>2018-11-08T13:20:27.352Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2018/11/08/hello-world/"/>
+    <id>http://yoursite.com/2018/11/08/hello-world/</id>
+    <published>2018-11-08T13:05:05.664Z</published>
+    <updated>2018-11-08T13:05:05.665Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
