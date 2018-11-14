@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://yourloverboy.xyz/"/>
   <updated>2018-11-09T06:54:58.135Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://yourloverboy.xyz/</id>
   
   <author>
     <name>LoverBoy</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>吃鸡第一天</title>
-    <link href="http://yoursite.com/2018/11/09/%E5%90%83%E9%B8%A1%E7%AC%AC%E4%B8%80%E5%A4%A9/"/>
-    <id>http://yoursite.com/2018/11/09/吃鸡第一天/</id>
+    <link href="http://yourloverboy.xyz/2018/11/09/%E5%90%83%E9%B8%A1%E7%AC%AC%E4%B8%80%E5%A4%A9/"/>
+    <id>http://yourloverboy.xyz/2018/11/09/吃鸡第一天/</id>
     <published>2018-11-09T06:48:24.000Z</published>
     <updated>2018-11-09T06:54:58.135Z</updated>
     
@@ -35,14 +35,14 @@
     </summary>
     
     
-      <category term="吃鸡" scheme="http://yoursite.com/tags/%E5%90%83%E9%B8%A1/"/>
+      <category term="吃鸡" scheme="http://yourloverboy.xyz/tags/%E5%90%83%E9%B8%A1/"/>
     
   </entry>
   
   <entry>
     <title>你好hexo</title>
-    <link href="http://yoursite.com/2018/11/08/%E4%BD%A0%E5%A5%BDhexo/"/>
-    <id>http://yoursite.com/2018/11/08/你好hexo/</id>
+    <link href="http://yourloverboy.xyz/2018/11/08/%E4%BD%A0%E5%A5%BDhexo/"/>
+    <id>http://yourloverboy.xyz/2018/11/08/你好hexo/</id>
     <published>2018-11-08T13:20:27.000Z</published>
     <updated>2018-11-08T13:20:27.352Z</updated>
     
@@ -55,8 +55,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2018/11/08/hello-world/"/>
-    <id>http://yoursite.com/2018/11/08/hello-world/</id>
+    <link href="http://yourloverboy.xyz/2018/11/08/hello-world/"/>
+    <id>http://yourloverboy.xyz/2018/11/08/hello-world/</id>
     <published>2018-11-08T13:05:05.664Z</published>
     <updated>2018-11-14T03:47:06.155Z</updated>
     
