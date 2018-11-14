@@ -445,7 +445,7 @@ body {
 .header-inner {
   margin: 0 auto;
   padding: 100px 0 70px;
-  width: 700px;
+  width: 860px;
 }
 @media (min-width: 1600px) {
   .container .header-inner {
@@ -457,7 +457,7 @@ body {
 }
 .main-inner {
   margin: 0 auto;
-  width: 700px;
+  width: 860px;
 }
 @media (min-width: 1600px) {
   .container .main-inner {
@@ -474,7 +474,7 @@ body {
 .footer-inner {
   box-sizing: border-box;
   margin: 20px auto;
-  width: 700px;
+  width: 860px;
 }
 @media (min-width: 1600px) {
   .container .footer-inner {
@@ -1941,7 +1941,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #177ded;
+  background: #9cff6b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3038,14 +3038,23 @@ body {
 }
 .post {
   background: #fff;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 .header,
 .footer {
-  opacity: 0.8;
+  background: #fcc;
+  opacity: 0.6;
 }
 .sidebar {
-  background: #fff;
-  opacity: 0.8;
+  background: -webkit-linear-gradient(left top, #12c2e9, #c471ed, #f64f59); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(bottom right, #12c2e9, #c471ed, #f64f59); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(bottom right, #12c2e9, #c471ed, #f64f59); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to bottom right, #12c2e9, #c471ed, #f64f59); /* 标准的语法 */
+  opacity: 0.9;
   box-shadow: none;
+}
+.site-description,
+site-state,
+links-of-blogroll {
+  corlor: #fff;
 }
