@@ -28,6 +28,6 @@ var snow = function() {
 				e[b] = b % 3 > 0 ? {x:Math.random() * d, y:-10, r:f.r, d:f.d} : Math.sin(h) > 0 ? {x:-5, y:Math.random() * c, r:f.r, d:f.d} : {x:d + 5, y:Math.random() * c, r:f.r, d:f.d}
 			}
 		}
-	}, 50)
+	}, 40)
 }
 snow();
