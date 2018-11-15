@@ -70,3 +70,5 @@ onload = function() {
         $body.appendChild($elem);
     };
 };
+
+// 鼠标点击效果结束
