@@ -1941,7 +1941,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #3e4be0;
+  background: #ff55b3;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3043,8 +3043,8 @@ body {
 }
 .header,
 .footer {
-  background: #fcc;
-  opacity: 0.6;
+  background: #e9e4f0;
+  opacity: 0.7;
 }
 .sidebar {
   background: -webkit-linear-gradient(left top, #7f7fd5, #86a8e7, #91eae4); /* Safari 5.1 - 6.0 */
@@ -3073,7 +3073,7 @@ body {
 }
 .feed-link a {
   border: 1px solid #ffc;
-  color: #acb6e5;
+  color: #fff;
   opacity: 1;
 }
 .feed-link a:hover {
@@ -3083,7 +3083,7 @@ body {
   background: -moz-linear-gradient(bottom right, #7f7fd5, #86a8e7, #91eae4); /* Firefox 3.6 - 15 */
   background: linear-gradient(to bottom right, #7f7fd5, #86a8e7, #91eae4); /* 标准的语法 */
   opacity: 0.9;
-  color: #acb6e5;
+  color: #fff;
 }
 feed:before,
 .fa-rss:before {
