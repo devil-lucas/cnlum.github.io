@@ -14,7 +14,7 @@ var snow = function() {
 		a.clearRect(0, 0, d, c);
 		a.fillStyle = "rgba(255, 255, 255, 0.6)";
 		a.shadowBlur = 5;
-		a.shadowColor = "rgba(255, 255, 255, 0.9)";
+		a.shadowColor = "rgba(255, 255, 255, 0.5)";
 		a.beginPath();
 		for(var b = 0;b < 50;b++) {
  		var f = e[b];
