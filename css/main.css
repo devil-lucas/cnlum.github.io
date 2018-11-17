@@ -1941,7 +1941,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f6637a;
+  background: #f16f5e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3041,6 +3041,9 @@ body {
   background: #fff;
   opacity: 0.8;
   border-radius: 10px;
+}
+.menu .menu-item a:hover {
+  opacity: 0.6;
 }
 .header {
   background: -webkit-linear-gradient(left, #12c2e9, #c471ed, #91eae4); /* Safari 5.1 - 6.0 */
