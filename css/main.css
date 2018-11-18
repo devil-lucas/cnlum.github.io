@@ -1941,7 +1941,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #757de9;
+  background: #6795ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3036,6 +3036,9 @@ body {
   background-attachment: fixed;
   background-position: 50% 50%;
   color: #5c5c5c;
+}
+.site-meta .site-title {
+  color: #302b63;
 }
 .post {
   background: #fff;
