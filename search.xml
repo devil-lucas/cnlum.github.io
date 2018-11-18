@@ -1,60 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-    
-    <entry>
-      <title>Linux下简单使用make、makefile</title>
-      <link href="/2018/11/18/makefile%E4%BD%BF%E7%94%A8/"/>
-      <url>/2018/11/18/makefile%E4%BD%BF%E7%94%A8/</url>
-      
-        <content type="html"><![CDATA[<h1 id="make是什么？"><a href="#make是什么？" class="headerlink" title="make是什么？"></a>make是什么？</h1><p>make的功能：make是一个解释makefile中指令的命令工具。他可以简化编译过程里面所下达的指令，当执行make时，make会在当前的目录下搜寻makefile（Makefile）这个文本文件（可以理解为编译的配置文件），执行对应的操作。make会自动的判别原始码是否经过变动了，而自动更新执行档。</p><p>原理：当make指令第一次执行时，它会扫描makefile找到目标以及其依赖。看这些依赖是否是目标，如果是那就继续为这些依赖扫描makefile找到它的依赖关系，建立它，并执行其方法。如果不是直接就可以建立关系，编译它们。</p><h1 id="为什么要使用make？"><a href="#为什么要使用make？" class="headerlink" title="为什么要使用make？"></a>为什么要使用make？</h1><p>假设，现在一个项目里面包含了100个程序文件，如果要对这个项目进行编译，那么光是编译指令就是100条。如果要重新进行编译，那么就得像之前全部重来一次。这么低效的方法我们程序员肯定是忍不了，不符合我们程序员的作风。所以，用make来进行操作，间接的调用gcc岂不是很便捷？如果我们更动过某些源文件，make也可以主动的判断哪一个源文件与相关的目标文件有更新过，并且仅更新该目标文件。这样不但减少了重新编译所需要的时间，使用起来也更加方便。</p><h1 id="gcc编译器和make命令工具安装"><a href="#gcc编译器和make命令工具安装" class="headerlink" title="gcc编译器和make命令工具安装"></a>gcc编译器和make命令工具安装</h1><p>在Linux终端中执行</p><p>安装gcc编译器：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install gcc</span><br></pre></td></tr></table></figure><p>安装make命令工具：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install make</span><br></pre></td></tr></table></figure><p>两个一路等待下载执行完成。</p><h1 id="makefile的规则语法"><a href="#makefile的规则语法" class="headerlink" title="makefile的规则语法"></a>makefile的规则语法</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">目标（target）: 目标文件1 目标文件2</span><br><span class="line">gcc -o 预建立的执行文件 目标文件1 目标文件2</span><br></pre></td></tr></table></figure><p>注意：建立执行语法（也就是gcc那条语句）必须以tab键开头，不可以使用空格代替。</p><p>目标（target）就是我们想要建立的信息，而目标文件就是具有相关性的object files。</p><p>语法：</p><ul><li><p>在makefile当中的#代表批注；</p></li><li><p>tab键需要在命令行（例如gcc这个编译程序指令）的开头第一个字符；</p></li><li><p>目标（target）与相关目标文件之间需要用 : (分号)隔开；</p></li></ul><h1 id="makefile使用举例说明"><a href="#makefile使用举例说明" class="headerlink" title="makefile使用举例说明"></a>makefile使用举例说明</h1><p>我们要编译main.c、test1.h、test2.h、test3.h生成可执行程序TEST。</p><p>我们可以直接使用gcc这样写：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -o TEST main.c test1.h test2.h test3.h</span><br></pre></td></tr></table></figure><p>但是就像上面说的，我们之后发现了test2.c里面的内容写错了，改好之后要重新编译，我们接着输入上面的命令进行编译。但是如果我们一个项目有很多文件时，就很麻烦了。我们可以写个makefile简化方便执行。</p><p>创建一个makefile或者Makefile文件（必须是），因为make指令在编译时它会查找以下文件是否有makefile或者Mkefile：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch makefile</span><br></pre></td></tr></table></figure><p>vi命令进入makefile：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi makefile</span><br></pre></td></tr></table></figure><p>修改makefile文件如下：</p><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TEST： main.c test1.h test2.h test3.h</span><br><span class="line">gcc -o TEST main.c test1.h test2.h test3.h</span><br></pre></td></tr></table></figure><p>我的main.c、test1.h、test2.h、test3.h内容如下：</p><p><img src="\images\post_img\makefile-源代码.PNG" alt="我的源代码"></p><p>一切准备完成之后，我们直接执行make即可编译文件：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure><p><img src="\images\post_img\makefile-执行完make.PNG" alt="执行make"></p><p>编译完成后，我们看到目录下产生了TEST文件，接下来执行它试试看：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./TEST</span><br></pre></td></tr></table></figure><p><img src="\images\post_img\makefile-TEST执行.PNG" alt="执行TEST"></p><p>如果不想让编译规则显示在屏幕上，只要在编译规则前面加个@。</p><p>如果现在再对文件编译一次会发生什么呢？可以试一下。</p><p>如果修改了其中一个文件再编译一下又会发生什么？</p><p>现在我们在makefile里面定义一个clean，用来执行rm的操作：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">TEST： main.c test1.h test2.h test3.h</span><br><span class="line">gcc -o TEST main.c test1.h test2.h test3.h</span><br><span class="line">clean: </span><br><span class="line">rm -f TEST</span><br></pre></td></tr></table></figure><p>执行：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make clean</span><br></pre></td></tr></table></figure><p><img src="\images\post_img\makefile-clean.PNG" alt="加入clean"></p><p>这里调用了clean，就把之前编译完成的TEST文件删除了。</p><p>像我们有多个文件需要处理，可以在makefile里面定义一个变量：</p><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">OBJS = main.c test1.h test2.h test3.h</span><br><span class="line">TEST： <span class="variable">$(OBJS)</span></span><br><span class="line">gcc -o TEST <span class="variable">$(OBJS)</span></span><br><span class="line"><span class="section">clean: </span></span><br><span class="line">rm -f TEST</span><br></pre></td></tr></table></figure><p>结果和上面写法一样，如果我们执行make clean TEST，先调用clean清除，然后调用了TEST编译。</p><p>注意：</p><ul><li>变量名左边不可以加tab键；</li><li>变量与变量内容用 = （等号）隔开；</li><li>变量名最好大写，为了编码风格；</li><li>运用变量时，以$(变量名)或者${变量名}使用；</li></ul>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Linux </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>shell基础</title>
-      <link href="/2018/11/16/shell%E5%9F%BA%E7%A1%80/"/>
-      <url>/2018/11/16/shell%E5%9F%BA%E7%A1%80/</url>
-      
-        <content type="html"><![CDATA[<p>在Linux系统中，Shell是最常使用的程序，其主要的作用是侦听用户指令、启动命令所指定的程序并将结果返回给用户，本篇主要讲述Shell的基本使用方法。</p><h2 id="1）Shell简介"><a href="#1）Shell简介" class="headerlink" title="1）Shell简介"></a>1）Shell简介</h2><p>在AT&amp;T工作的Dennis Ritchie和Ken Thompson两人设计Unix操作系统的时候，想要为用户创建一种与Unix系统交流的方法。那时候操作系统带有命令解释器。命令解释器接受用户的之恋，然后解释它们，因而计算机可以使用这些命令。</p><p>但是Ritchie和Thompson想要的不只是这些功能，他们想要提供比当时的命令解释器具备更优异功能的工具。这导致了Bourne Shell（统称为sh）的开发，由S.R.Bourne创建。自从Bourne Shell出现以后，其他类型Shell也被一一开发，比如C Shell（csh）和Korn Shell（ksh）。</p><h3 id="1-1）Bash命令"><a href="#1-1）Bash命令" class="headerlink" title="1.1）Bash命令"></a>1.1）Bash命令</h3><p>当登录一个系统或打开一个终端窗口时，首先看到的是bash Shell提示符。Liunx系统标准的提示符包括了用户登录名、登录的主机名、当前所在的工作目录路径和提示符号。</p><p>以普通用户Luming-Liu登录名为it的主机，它的工作目录是/home/Luming-Liu,如下所示：</p><p><code>[Luming-Liu@it ~]$</code></p><p>以root用户登录系统的提示符如下所示：</p><p><code>[root@it ~]#</code></p><p>除了不同的用户名外，提示符号由“$”变成了”#”。根据bash的传统，普通用户的提示符以“$”结尾，而超级用户的结尾以”#”结尾，提示符的每个部分都可以定制。</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Linux </tag>
-            
-            <tag> shell </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>吃鸡第一天</title>
-      <link href="/2018/11/09/%E5%90%83%E9%B8%A1%E7%AC%AC%E4%B8%80%E5%A4%A9/"/>
-      <url>/2018/11/09/%E5%90%83%E9%B8%A1%E7%AC%AC%E4%B8%80%E5%A4%A9/</url>
-      
-        <content type="html"><![CDATA[<p>今天的天很蓝，水很清。我拿出了手机，打开了刺激战场，因为大神777说要带我吃鸡。说的77，她真的非常厉害，自己总结出了一套传奇打法——“敌不动我不动，敌要动我还是不动”，这句话看似简单，但是要学到其中的奥妙还是非常的困难，这里总结为两个字——苟住！真好，今天又落地成盒了，肯定是谁念了落地死老乡，好气！ </p><p>真好`！</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">mian</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"你好~世界"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 吃鸡 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-  
-  
+<search>
+  <entry>
+    <title><![CDATA[Linux下简单使用make、makefile]]></title>
+    <url>%2F2018%2F11%2F18%2Fmakefile%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[make是什么？make的功能：make是一个解释makefile中指令的命令工具。他可以简化编译过程里面所下达的指令，当执行make时，make会在当前的目录下搜寻makefile（Makefile）这个文本文件（可以理解为编译的配置文件），执行对应的操作。make会自动的判别原始码是否经过变动了，而自动更新执行档。 原理：当make指令第一次执行时，它会扫描makefile找到目标以及其依赖。看这些依赖是否是目标，如果是那就继续为这些依赖扫描makefile找到它的依赖关系，建立它，并执行其方法。如果不是直接就可以建立关系，编译它们。 为什么要使用make？假设，现在一个项目里面包含了100个程序文件，如果要对这个项目进行编译，那么光是编译指令就是100条。如果要重新进行编译，那么就得像之前全部重来一次。这么低效的方法我们程序员肯定是忍不了，不符合我们程序员的作风。所以，用make来进行操作，间接的调用gcc岂不是很便捷？如果我们更动过某些源文件，make也可以主动的判断哪一个源文件与相关的目标文件有更新过，并且仅更新该目标文件。这样不但减少了重新编译所需要的时间，使用起来也更加方便。 gcc编译器和make命令工具安装在Linux终端中执行 安装gcc编译器： 1sudo apt install gcc 安装make命令工具： 1sudo apt install make 两个一路等待下载执行完成。 makefile的规则语法12目标（target）: 目标文件1 目标文件2 gcc -o 预建立的执行文件 目标文件1 目标文件2 注意：建立执行语法（也就是gcc那条语句）必须以tab键开头，不可以使用空格代替。 目标（target）就是我们想要建立的信息，而目标文件就是具有相关性的object files。 语法： 在makefile当中的#代表批注； tab键需要在命令行（例如gcc这个编译程序指令）的开头第一个字符； 目标（target）与相关目标文件之间需要用 : (分号)隔开； makefile使用举例说明我们要编译main.c、test1.h、test2.h、test3.h生成可执行程序TEST。 我们可以直接使用gcc这样写： 1gcc -o TEST main.c test1.h test2.h test3.h 但是就像上面说的，我们之后发现了test2.c里面的内容写错了，改好之后要重新编译，我们接着输入上面的命令进行编译。但是如果我们一个项目有很多文件时，就很麻烦了。我们可以写个makefile简化方便执行。 创建一个makefile或者Makefile文件（必须是），因为make指令在编译时它会查找以下文件是否有makefile或者Mkefile： 1touch makefile vi命令进入makefile： 1vi makefile 修改makefile文件如下： 12TEST： main.c test1.h test2.h test3.h gcc -o TEST main.c test1.h test2.h test3.h 我的main.c、test1.h、test2.h、test3.h内容如下： 一切准备完成之后，我们直接执行make即可编译文件： 1make 编译完成后，我们看到目录下产生了TEST文件，接下来执行它试试看： 1./TEST 如果不想让编译规则显示在屏幕上，只要在编译规则前面加个@。 如果现在再对文件编译一次会发生什么呢？可以试一下。 如果修改了其中一个文件再编译一下又会发生什么？ 现在我们在makefile里面定义一个clean，用来执行rm的操作： 1234TEST： main.c test1.h test2.h test3.h gcc -o TEST main.c test1.h test2.h test3.hclean: rm -f TEST 执行： 1make clean 这里调用了clean，就把之前编译完成的TEST文件删除了。 像我们有多个文件需要处理，可以在makefile里面定义一个变量： 12345OBJS = main.c test1.h test2.h test3.hTEST： $(OBJS) gcc -o TEST $(OBJS)clean: rm -f TEST 结果和上面写法一样，如果我们执行make clean TEST，先调用clean清除，然后调用了TEST编译。 注意： 变量名左边不可以加tab键； 变量与变量内容用 = （等号）隔开； 变量名最好大写，为了编码风格； 运用变量时，以$(变量名)或者${变量名}使用；]]></content>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[shell基础]]></title>
+    <url>%2F2018%2F11%2F16%2Fshell%E5%9F%BA%E7%A1%80%2F</url>
+    <content type="text"><![CDATA[在Linux系统中，Shell是最常使用的程序，其主要的作用是侦听用户指令、启动命令所指定的程序并将结果返回给用户，本篇主要讲述Shell的基本使用方法。 1）Shell简介在AT&amp;T工作的Dennis Ritchie和Ken Thompson两人设计Unix操作系统的时候，想要为用户创建一种与Unix系统交流的方法。那时候操作系统带有命令解释器。命令解释器接受用户的之恋，然后解释它们，因而计算机可以使用这些命令。 但是Ritchie和Thompson想要的不只是这些功能，他们想要提供比当时的命令解释器具备更优异功能的工具。这导致了Bourne Shell（统称为sh）的开发，由S.R.Bourne创建。自从Bourne Shell出现以后，其他类型Shell也被一一开发，比如C Shell（csh）和Korn Shell（ksh）。 1.1）Bash命令当登录一个系统或打开一个终端窗口时，首先看到的是bash Shell提示符。Liunx系统标准的提示符包括了用户登录名、登录的主机名、当前所在的工作目录路径和提示符号。 以普通用户Luming-Liu登录名为it的主机，它的工作目录是/home/Luming-Liu,如下所示： [Luming-Liu@it ~]$ 以root用户登录系统的提示符如下所示： [root@it ~]# 除了不同的用户名外，提示符号由“$”变成了”#”。根据bash的传统，普通用户的提示符以“$”结尾，而超级用户的结尾以”#”结尾，提示符的每个部分都可以定制。]]></content>
+      <tags>
+        <tag>Linux</tag>
+        <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[吃鸡第一天]]></title>
+    <url>%2F2018%2F11%2F09%2F%E5%90%83%E9%B8%A1%E7%AC%AC%E4%B8%80%E5%A4%A9%2F</url>
+    <content type="text"><![CDATA[今天的天很蓝，水很清。我拿出了手机，打开了刺激战场，因为大神777说要带我吃鸡。说的77，她真的非常厉害，自己总结出了一套传奇打法——“敌不动我不动，敌要动我还是不动”，这句话看似简单，但是要学到其中的奥妙还是非常的困难，这里总结为两个字——苟住！真好，今天又落地成盒了，肯定是谁念了落地死老乡，好气！ 真好`！ 123456789#include&lt;stdio.h&gt;int mian() &#123; printf("你好~世界"); return 0;&#125;]]></content>
+      <tags>
+        <tag>吃鸡</tag>
+      </tags>
+  </entry>
 </search>
