@@ -1941,7 +1941,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff7966;
+  background: #757de9;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3031,7 +3031,7 @@ hr {
   -moz-box-shadow: 0 0 20px rgba(202,203,204,0.5);
 }
 body {
-  background: #fff;
+  background: url("/images/background.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
@@ -3039,7 +3039,11 @@ body {
 }
 .post {
   background: #fff;
-  opacity: 0.8;
+  border-radius: 10px;
+}
+.posts-expand .post-body .fancybox img {
+  margin: 0 auto 25px;
+  border: 2px solid #ccc;
   border-radius: 10px;
 }
 .menu .menu-item a:hover {
