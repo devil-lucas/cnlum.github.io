@@ -94,7 +94,7 @@
 <meta property="og:image" content="http://yourloverboy.xyz/images/post_img/makefile-执行完make.PNG">
 <meta property="og:image" content="http://yourloverboy.xyz/images/post_img/makefile-TEST执行.PNG">
 <meta property="og:image" content="http://yourloverboy.xyz/images/post_img/makefile-clean.PNG">
-<meta property="og:updated_time" content="2018-11-18T09:30:20.108Z">
+<meta property="og:updated_time" content="2018-11-18T11:16:40.108Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux下简单使用make、makefile">
 <meta name="twitter:description" content="make是什么？make的功能：make是一个解释makefile中指令的命令工具。他可以简化编译过程里面所下达的指令，当执行make时，make会在当前的目录下搜寻makefile（Makefile）这个文本文件（可以理解为编译的配置文件），执行对应的操作。make会自动的判别原始码是否经过变动了，而自动更新执行档。 原理：当make指令第一次执行时，它会扫描makefile找到目标以及其依赖。">
@@ -380,13 +380,13 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install make</span><br></pre></td></tr></table></figure>
 <p>两个一路等待下载执行完成。</p>
 <h1 id="makefile的规则语法"><a href="#makefile的规则语法" class="headerlink" title="makefile的规则语法"></a>makefile的规则语法</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">目标（target）: 目标文件1 目标文件2</span><br><span class="line">	gcc -o 预建立的执行文件 目标文件1 目标文件2</span><br></pre></td></tr></table></figure>
-<p>注意：建立执行语法（也就是gcc那条语句）必须以<tab>开头，不可以使用空格代替。</tab></p>
+<p>注意：建立执行语法（也就是gcc那条语句）必须以tab键开头，不可以使用空格代替。</p>
 <p>目标（target）就是我们想要建立的信息，而目标文件就是具有相关性的object files。</p>
 <p>语法：</p>
 <ul>
 <li><p>在makefile当中的#代表批注；</p>
 </li>
-<li><p><tab>需要在命令行（例如gcc这个编译程序指令）的开头第一个字符；</tab></p>
+<li><p>tab键需要在命令行（例如gcc这个编译程序指令）的开头第一个字符；</p>
 </li>
 <li><p>目标（target）与相关目标文件之间需要用 : (分号)隔开；</p>
 </li>
@@ -423,7 +423,7 @@
 <p>结果和上面写法一样，如果我们执行make clean TEST，先调用clean清除，然后调用了TEST编译。</p>
 <p>注意：</p>
 <ul>
-<li>变量左边不可以加<tab>；</tab></li>
+<li>变量名左边不可以加tab键；</li>
 <li>变量与变量内容用 = （等号）隔开；</li>
 <li>变量名最好大写，为了编码风格；</li>
 <li>运用变量时，以$(变量名)或者${变量名}使用；</li>
