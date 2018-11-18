@@ -1941,7 +1941,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #3c819f;
+  background: #e90dff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3045,9 +3045,10 @@ body {
   border-radius: 10px;
 }
 .posts-expand .post-body .fancybox img {
-  margin: 0 auto 25px;
-  border: 2px solid #ccc;
-  border-radius: 10px;
+  margin: unset;
+}
+.post-body div a img {
+  width: 200px;
 }
 .menu .menu-item a:hover {
   opacity: 0.6;

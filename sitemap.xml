@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yourloverboy.xyz/about/index.html</loc>
+    
+    <lastmod>2018-11-18T13:37:57.482Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yourloverboy.xyz/2018/11/18/makefile%E4%BD%BF%E7%94%A8/</loc>
     
     <lastmod>2018-11-18T11:16:40.108Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://yourloverboy.xyz/categories/index.html</loc>
     
     <lastmod>2018-11-17T15:18:17.186Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yourloverboy.xyz/about/index.html</loc>
-    
-    <lastmod>2018-11-17T15:16:17.403Z</lastmod>
     
   </url>
   
