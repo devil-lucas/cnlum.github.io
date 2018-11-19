@@ -28,7 +28,7 @@ onload = function() {
                 $elem.innerText = "(๑•̀_•́๑)";
                 break;
             case 50:
-                $elem.innerText = "（￣へ￣）";
+                $elem.innerText = "(๑˙ー˙๑)";
                 break;
             case 60:
                 $elem.innerText = "(╯°口°)╯(┴—┴";
@@ -51,7 +51,7 @@ onload = function() {
                 $elem.innerText = "(ꐦ°᷄д°᷅)";
                 break;
             default:
-                $elem.innerText = "😋";
+                $elem.innerText = "你点我~";
                 break;
         }
         $elem.style.fontSize = Math.random() * 10 + 8 + "px";
