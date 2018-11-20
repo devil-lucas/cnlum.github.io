@@ -1941,7 +1941,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff75ff;
+  background: #22d798;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3059,6 +3059,7 @@ body {
   background: -moz-linear-gradient(left, #12c2e9, #c471ed, #91eae4); /* Firefox 3.6 - 15 */
   background: linear-gradient(left, #12c2e9, #c471ed, #91eae4); /* 标准的语法 */
   opacity: 1;
+  box-shadow: 0 1px 4px;
 }
 .footer {
   background: #fff;
