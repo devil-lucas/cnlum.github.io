@@ -13,7 +13,7 @@ onload = function() {
         var y = e.pageY;
         $elem.style.left = (x - 10) + "px";
         $elem.style.top = (y - 20) + "px";
-        clearInterval(anim);
+//        clearInterval(anim);
         switch (++click_cnt) {
             case 10:
                 $elem.innerText = "OωO";
