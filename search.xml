@@ -8,21 +8,4 @@
         <tag>Linux</tag>
       </tags>
   </entry>
-  <entry>
-    <title><![CDATA[shell基础]]></title>
-    <url>%2F2018%2F11%2F16%2Fshell%E5%9F%BA%E7%A1%80%2F</url>
-    <content type="text"><![CDATA[在Linux系统中，Shell是最常使用的程序，其主要的作用是侦听用户指令、启动命令所指定的程序并将结果返回给用户，本篇主要讲述Shell的基本使用方法。 1）Shell简介在AT&amp;T工作的Dennis Ritchie和Ken Thompson两人设计Unix操作系统的时候，想要为用户创建一种与Unix系统交流的方法。那时候操作系统带有命令解释器。命令解释器接受用户的之恋，然后解释它们，因而计算机可以使用这些命令。 但是Ritchie和Thompson想要的不只是这些功能，他们想要提供比当时的命令解释器具备更优异功能的工具。这导致了Bourne Shell（统称为sh）的开发，由S.R.Bourne创建。自从Bourne Shell出现以后，其他类型Shell也被一一开发，比如C Shell（csh）和Korn Shell（ksh）。 1.1）Bash命令当登录一个系统或打开一个终端窗口时，首先看到的是bash Shell提示符。Liunx系统标准的提示符包括了用户登录名、登录的主机名、当前所在的工作目录路径和提示符号。 以普通用户Luming-Liu登录名为it的主机，它的工作目录是/home/Luming-Liu,如下所示： [Luming-Liu@it ~]$ 以root用户登录系统的提示符如下所示： [root@it ~]# 除了不同的用户名外，提示符号由“$”变成了”#”。根据bash的传统，普通用户的提示符以“$”结尾，而超级用户的结尾以”#”结尾，提示符的每个部分都可以定制。]]></content>
-      <tags>
-        <tag>Linux</tag>
-        <tag>shell</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[吃鸡第一天]]></title>
-    <url>%2F2018%2F11%2F09%2F%E5%90%83%E9%B8%A1%E7%AC%AC%E4%B8%80%E5%A4%A9%2F</url>
-    <content type="text"><![CDATA[今天的天很蓝，水很清。我拿出了手机，打开了刺激战场，因为大神777说要带我吃鸡。说的77，她真的非常厉害，自己总结出了一套传奇打法——“敌不动我不动，敌要动我还是不动”，这句话看似简单，但是要学到其中的奥妙还是非常的困难，这里总结为两个字——苟住！真好，今天又落地成盒了，肯定是谁念了落地死老乡，好气！ 真好`！ 123456789#include&lt;stdio.h&gt;int mian() &#123; printf("你好~世界"); return 0;&#125;]]></content>
-      <tags>
-        <tag>吃鸡</tag>
-      </tags>
-  </entry>
 </search>
