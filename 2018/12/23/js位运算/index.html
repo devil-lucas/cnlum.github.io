@@ -90,7 +90,7 @@
 <meta property="og:site_name" content="LoverBoy | 个人博客">
 <meta property="og:description" content="位运算可以对由数字表示的二进制数进行更底层的按位运算。JavaScript中有7种位运算符，分别为按位与（&amp;amp;），按位或（ | ），按位异或（^），按位非（~），左移位（&amp;lt;&amp;lt;）,带符号右移位（&amp;gt;&amp;gt;），无符号右移位（&amp;gt;&amp;gt;&amp;gt;）。 按位与（&amp;amp;）&amp;amp;是一个二元运算符（有两个操作数），&amp;amp;对它的整型操作数逐位执行布尔与操作（将十进制转换成二">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-23T13:30:21.375Z">
+<meta property="og:updated_time" content="2018-12-24T03:36:54.979Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js按位运算符">
 <meta name="twitter:description" content="位运算可以对由数字表示的二进制数进行更底层的按位运算。JavaScript中有7种位运算符，分别为按位与（&amp;amp;），按位或（ | ），按位异或（^），按位非（~），左移位（&amp;lt;&amp;lt;）,带符号右移位（&amp;gt;&amp;gt;），无符号右移位（&amp;gt;&amp;gt;&amp;gt;）。 按位与（&amp;amp;）&amp;amp;是一个二元运算符（有两个操作数），&amp;amp;对它的整型操作数逐位执行布尔与操作（将十进制转换成二">
@@ -424,7 +424,16 @@
 <p>​    按位取反： 1 1 1 1  1 1 1 1  1 1 1 1  1 1 1 1  1 1 1 1  1 1 1 1  1 1 1 1  1 1 1 0</p>
 <p>​    末位加1：1 1 1 1  1 1 1 1  1 1 1 1  1 1 1 1  1 1 1 1  1 1 1 1  1 1 1 1  1 1 1 1</p>
 <p>右移2位，高位补0： 0 0 1 1  1 1 1 1  1 1 1 1  1 1 1 1  1 1 1 1  1 1 1 1  1 1 1 1 1 1 1 1</p>
-<p>转换成二进制就是1073741823。</p>
+<p>转换成十进制就是1073741823。</p>
+<h1 id="位运算在js中的妙用"><a href="#位运算在js中的妙用" class="headerlink" title="位运算在js中的妙用"></a>位运算在js中的妙用</h1><h3 id="使用-amp-运算符判断一个数的奇偶"><a href="#使用-amp-运算符判断一个数的奇偶" class="headerlink" title="使用&amp;运算符判断一个数的奇偶"></a>使用&amp;运算符判断一个数的奇偶</h3><p>奇数&amp;1 结果是 1</p>
+<p>偶数&amp;1 结果是 0</p>
+<p>1为奇数，0为偶数。那么3&amp;1=1，4&amp;1=0。</p>
+<h3 id="使用-运算符完成数值的交换"><a href="#使用-运算符完成数值的交换" class="headerlink" title="使用^运算符完成数值的交换"></a>使用^运算符完成数值的交换</h3><p>a=2</p>
+<p>b=3</p>
+<p>a^=b</p>
+<p>b^=a</p>
+<p>a^=b</p>
+<p>结果a=3，b=2。</p>
 
       
     </div>
@@ -651,7 +660,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#按位与（-amp-）"><span class="nav-number">1.</span> <span class="nav-text">按位与（&amp;）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#按位或（-）"><span class="nav-number">2.</span> <span class="nav-text">按位或（ | ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#按位异或（-）"><span class="nav-number">3.</span> <span class="nav-text">按位异或（^）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#按位非（-）"><span class="nav-number">4.</span> <span class="nav-text">按位非（~）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#左移位（-lt-lt-）"><span class="nav-number">5.</span> <span class="nav-text">左移位（&lt;&lt;）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#带符号右移位（-gt-gt-）"><span class="nav-number">6.</span> <span class="nav-text">带符号右移位（&gt;&gt;）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#无符号右移位（-gt-gt-gt-）"><span class="nav-number">7.</span> <span class="nav-text">无符号右移位（&gt;&gt;&gt;）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#按位与（-amp-）"><span class="nav-number">1.</span> <span class="nav-text">按位与（&amp;）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#按位或（-）"><span class="nav-number">2.</span> <span class="nav-text">按位或（ | ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#按位异或（-）"><span class="nav-number">3.</span> <span class="nav-text">按位异或（^）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#按位非（-）"><span class="nav-number">4.</span> <span class="nav-text">按位非（~）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#左移位（-lt-lt-）"><span class="nav-number">5.</span> <span class="nav-text">左移位（&lt;&lt;）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#带符号右移位（-gt-gt-）"><span class="nav-number">6.</span> <span class="nav-text">带符号右移位（&gt;&gt;）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#无符号右移位（-gt-gt-gt-）"><span class="nav-number">7.</span> <span class="nav-text">无符号右移位（&gt;&gt;&gt;）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#位运算在js中的妙用"><span class="nav-number">8.</span> <span class="nav-text">位运算在js中的妙用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-amp-运算符判断一个数的奇偶"><span class="nav-number">8.0.1.</span> <span class="nav-text">使用&amp;运算符判断一个数的奇偶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-运算符完成数值的交换"><span class="nav-number">8.0.2.</span> <span class="nav-text">使用^运算符完成数值的交换</span></a></li></ol></li></ol></div>
             
 
           </div>
