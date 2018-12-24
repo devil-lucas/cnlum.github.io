@@ -12,9 +12,9 @@ var snow = function() {
 	var h = 0;
 	window.intervral4Christmas = setInterval(function() {
 		a.clearRect(0, 0, d, c);
-//		a.fillStyle = "rgba(134, 168, 231, 0.4)";
+		a.fillStyle = "rgba(134, 168, 231, 0.8)";
 		a.shadowBlur = 5;
-		a.shadowColor = "rgba(134, 168, 231, 0.5)";
+		a.shadowColor = "rgba(134, 168, 231, 0.6)";
 		a.beginPath();
 		for(var b = 0;b < 50;b++) {
  		var f = e[b];
